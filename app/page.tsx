@@ -1,23 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import { useTheme } from "next-themes";
 
 export default function Home() {
-  const { resolvedTheme } = useTheme();
-
   return (
     <main>
       <section className="relative h-[70vh] min-h-[400px] w-full">
         <Image
-          src={
-            resolvedTheme === "dark"
-              ? "/steve-busch-JD7T8Y1B79U-unsplash.jpg"
-              : "/gabriel-alenius-USXfF_ONUGo-unsplash.jpg"
-          }
+          src="/steve-busch-JD7T8Y1B79U-unsplash.jpg"
           alt="Hero image"
           fill
-          className="object-cover"
+          className="object-cover dark:block hidden"
+          priority
+        />
+        <Image
+          src="/gabriel-alenius-USXfF_ONUGo-unsplash.jpg"
+          alt="Hero image"
+          fill
+          className="object-cover dark:hidden block"
           priority
         />
         <div className="relative z-10 flex h-full items-center justify-center">
