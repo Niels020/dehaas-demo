@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display, Nunito } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { FontProvider } from "@/components/font-provider";
+import { FontBody } from "@/components/font-body";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -11,6 +15,16 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
+	subsets: ["latin"],
+});
+
+const playfair = Playfair_Display({
+	variable: "--font-playfair",
+	subsets: ["latin"],
+});
+
+const nunito = Nunito({
+	variable: "--font-nunito",
 	subsets: ["latin"],
 });
 
@@ -27,7 +41,7 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${nunito.variable} antialiased`}
 			>
 				<ThemeProvider
 					attribute="class"
@@ -35,8 +49,13 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<Navigation />
-					{children}
+					<FontProvider>
+						<FontBody>
+							<Navigation />
+							<div className="flex-1">{children}</div>
+							<Footer />
+						</FontBody>
+					</FontProvider>
 				</ThemeProvider>
 			</body>
 		</html>
