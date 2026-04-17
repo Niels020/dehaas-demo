@@ -55,14 +55,14 @@ export default function Home() {
 			<section className="relative h-[70vh] min-h-[400px] w-full">
 				<Image
 					src="/steve-busch-JD7T8Y1B79U-unsplash.jpg"
-					alt="Hero image"
+					alt="Starry night sky"
 					fill
 					className="object-cover dark:block hidden dark:brightness-75"
 					priority
 				/>
 				<Image
 					src="/gabriel-alenius-USXfF_ONUGo-unsplash.jpg"
-					alt="Hero image"
+					alt="Misty forest landscape"
 					fill
 					className="object-cover dark:hidden block"
 					priority
@@ -71,14 +71,29 @@ export default function Home() {
 				{!showMessage && (
 					<button
 						onClick={handleDotClick}
-						aria-label="Find the hidden dot"
-						className="absolute z-20 h-2 w-2 rounded-full cursor-pointer dark:bg-white/60 bg-black/60"
+						aria-label="Find the hidden object"
+						className="absolute z-20 cursor-pointer w-4 h-4"
 						style={{
 							left: `${dotPos.x}%`,
 							top: `${dotPos.y}%`,
 							transform: "translate(-50%, -50%)",
 						}}
-					/>
+					>
+						<Image
+							src="/ChatGPT_ufo.png"
+							alt="UFO"
+							width={16}
+							height={16}
+							className="dark:block hidden w-full h-full object-contain"
+						/>
+						<Image
+							src="/ChatGPT_bear.png"
+							alt="Bear"
+							width={16}
+							height={16}
+							className="dark:hidden block w-full h-full object-contain"
+						/>
+					</button>
 				)}
 
 				<div className="relative z-10 flex h-full items-center justify-center pointer-events-none">

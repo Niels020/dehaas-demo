@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Creations",
+	description:
+		"A collection of demos and experiments built with AI-assisted development.",
+};
+
 export default function Creations() {
 	return (
 		<main className="container mx-auto px-4 py-16">

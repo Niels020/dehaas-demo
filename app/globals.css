@@ -126,4 +126,13 @@
 	html {
 		@apply font-sans;
 	}
+	html[data-font="geist-mono"] {
+		font-family: var(--font-geist-mono);
+	}
+	html[data-font="serif"] {
+		font-family: var(--font-playfair);
+	}
+	html[data-font="rounded"] {
+		font-family: var(--font-nunito);
+	}
 }

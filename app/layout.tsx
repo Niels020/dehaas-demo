@@ -29,8 +29,12 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-	title: "My App",
-	description: "My App",
+	title: {
+		default: "My App",
+		template: "%s | My App",
+	},
+	description:
+		"Exploring the possibilities of modern web development using AI.",
 };
 
 export default function RootLayout({
@@ -40,6 +44,13 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `try{var f=localStorage.getItem("font");if(f)document.documentElement.setAttribute("data-font",f)}catch(e){}`,
+					}}
+				/>
+			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${nunito.variable} antialiased`}
 			>

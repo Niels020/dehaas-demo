@@ -1,3 +1,10 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Contact",
+	description: "Get in touch with questions, feedback, or collaboration ideas.",
+};
+
 export default function Contact() {
 	return (
 		<main className="container mx-auto px-4 py-16">

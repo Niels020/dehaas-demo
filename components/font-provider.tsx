@@ -54,6 +54,7 @@ export function FontProvider({ children }: { children: React.ReactNode }) {
 		const next = fonts[nextIndex];
 		setFont(next.key);
 		localStorage.setItem("font", next.key);
+		document.documentElement.setAttribute("data-font", next.key);
 	};
 
 	return (
