@@ -27,6 +27,10 @@ const fonts = [
 
 export type FontKey = (typeof fonts)[number]["key"];
 
+function isFontKey(value: string | null): value is FontKey {
+	return fonts.some((candidate) => candidate.key === value);
+}
+
 type FontContextType = {
 	font: FontKey;
 	fontLabel: string;
@@ -37,14 +41,18 @@ type FontContextType = {
 const FontContext = createContext<FontContextType | undefined>(undefined);
 
 export function FontProvider({ children }: { children: React.ReactNode }) {
-	const [font, setFont] = useState<FontKey>("geist-sans");
+	const [font, setFont] = useState<FontKey>(() => {
+		if (typeof window === "undefined") {
+			return "geist-sans";
+		}
+
+		const stored = localStorage.getItem("font");
+		return isFontKey(stored) ? stored : "geist-sans";
+	});
 
 	useEffect(() => {
-		const stored = localStorage.getItem("font") as FontKey | null;
-		if (stored && fonts.some((f) => f.key === stored)) {
-			setFont(stored);
-		}
-	}, []);
+		document.documentElement.setAttribute("data-font", font);
+	}, [font]);
 
 	const currentIndex = fonts.findIndex((f) => f.key === font);
 	const current = fonts[currentIndex];
