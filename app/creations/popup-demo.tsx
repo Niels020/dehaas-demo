@@ -101,8 +101,11 @@ export function PopupDemo() {
 					{/* Popup */}
 					{showPopup && (
 						<div
-							className="fixed z-[60] w-72 rounded-lg border border-border bg-card shadow-2xl transition-all duration-500 ease-in-out"
-							style={position}
+							className="fixed z-[60] w-72 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-card shadow-2xl transition-all duration-500 ease-in-out"
+							style={{
+								top: `clamp(1rem, ${position.top}, calc(100vh - 10rem))`,
+								left: `clamp(1rem, ${position.left}, calc(100vw - 19rem))`,
+							}}
 						>
 							<div className="flex items-center justify-between border-b border-border px-4 py-2">
 								<h3 className="text-sm font-semibold">
