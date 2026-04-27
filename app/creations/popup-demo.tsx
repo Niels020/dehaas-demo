@@ -22,8 +22,12 @@ function getRandomPosition() {
 	} while (idx === lastZoneIndex);
 	lastZoneIndex = idx;
 	const zone = ZONES[idx];
-	const top = Math.floor(Math.random() * (zone.top[1] - zone.top[0]) + zone.top[0]);
-	const left = Math.floor(Math.random() * (zone.left[1] - zone.left[0]) + zone.left[0]);
+	const top = Math.floor(
+		Math.random() * (zone.top[1] - zone.top[0]) + zone.top[0],
+	);
+	const left = Math.floor(
+		Math.random() * (zone.left[1] - zone.left[0]) + zone.left[0],
+	);
 	return { top: `${top}%`, left: `${left}%` };
 }
 
@@ -94,41 +98,41 @@ export function PopupDemo() {
 			)}
 
 			{/* Active state: full interactive area */}
-			{active && mounted && createPortal(
-				<>
-					{/* Full-screen dimmed overlay */}
-					<div className="fixed inset-0 bg-foreground/20 z-50" />
-					{/* Popup */}
-					{showPopup && (
-						<div
-							className="fixed z-[60] w-72 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-card shadow-2xl transition-all duration-500 ease-in-out"
-							style={{
-								top: `clamp(1rem, ${position.top}, calc(100vh - 10rem))`,
-								left: `clamp(1rem, ${position.left}, calc(100vw - 19rem))`,
-							}}
-						>
-							<div className="flex items-center justify-between border-b border-border px-4 py-2">
-								<h3 className="text-sm font-semibold">
-									Notice
-								</h3>
-								<button
-									onClick={dismissPopup}
-									className="rounded-sm p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-									aria-label="Close popup"
-								>
-									<X className="h-4 w-4" />
-								</button>
+			{active &&
+				mounted &&
+				createPortal(
+					<>
+						{/* Full-screen dimmed overlay */}
+						<div className="fixed inset-0 bg-foreground/20 z-50" />
+						{/* Popup */}
+						{showPopup && (
+							<div
+								className="fixed z-[60] w-72 max-w-[calc(100vw-2rem)] rounded-lg border border-border bg-card shadow-2xl transition-all duration-500 ease-in-out"
+								style={{
+									top: `clamp(1rem, ${position.top}, calc(100vh - 10rem))`,
+									left: `clamp(1rem, ${position.left}, calc(100vw - 19rem))`,
+								}}
+							>
+								<div className="flex items-center justify-between border-b border-border px-4 py-2">
+									<h3 className="text-sm font-semibold">Notice</h3>
+									<button
+										onClick={dismissPopup}
+										className="rounded-sm p-0.5 text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+										aria-label="Close popup"
+									>
+										<X className="h-4 w-4" />
+									</button>
+								</div>
+								<div className="flex items-center justify-center h-24">
+									<p className="text-base text-foreground text-center">
+										Welcome to my demo site.
+									</p>
+								</div>
 							</div>
-							<div className="flex items-center justify-center h-24">
-								<p className="text-base text-foreground text-center">
-									Welcome to my demo site.
-								</p>
-							</div>
-						</div>
-					)}
-				</>,
-				document.body
-			)}
+						)}
+					</>,
+					document.body,
+				)}
 		</div>
 	);
 }

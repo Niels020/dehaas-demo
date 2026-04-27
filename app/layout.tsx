@@ -35,6 +35,9 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Exploring the possibilities of modern web development using AI.",
+	icons: {
+		icon: "/favicon.svg",
+	},
 };
 
 export default function RootLayout({

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { MenuIcon } from "lucide-react";
@@ -28,8 +29,14 @@ export function Navigation() {
 	return (
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
 			<div className="container mx-auto flex h-16 items-center justify-between px-4">
-				<Link href="/" className="text-xl font-bold tracking-tight">
-					DeHaas Demo
+				<Link href="/" className="flex items-center">
+					<Image
+						src="/logo.svg"
+						alt="DeHaas Demo"
+						width={120}
+						height={40}
+						priority
+					/>
 				</Link>
 
 				{/* Desktop nav */}
