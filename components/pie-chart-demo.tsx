@@ -115,52 +115,59 @@ export function PieChartDemo() {
 						Click to expand
 					</p>
 				</button>
-		)}
-		{mounted &&
-			active &&
-			createPortal(
-				<div className={accentClassName}>
-					<div
-						className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-6"
-						onClick={() => setActive(false)}
-					>
-						<div
-							className="relative w-full max-w-xl rounded-2xl border border-border bg-card p-6 shadow-2xl"
-							onClick={(e) => e.stopPropagation()}
-						>
-							<button
-								onClick={() => setActive(false)}
-								className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
-							>
-								<X size={18} />
-							</button>
-							<p className="text-lg font-semibold mb-1">Traffic Sources</p>
-							<p className="text-xs text-muted-foreground mb-6">This month</p>
-							<ChartContainer config={chartConfig} className="h-64 w-full">
-								<PieChart>
-									<ChartTooltip content={<ChartTooltipContent nameKey="name" />} />
-									<Pie
-										data={data}
-										dataKey="value"
-										nameKey="name"
-										cx="50%"
-										cy="50%"
-										outerRadius={100}
-										innerRadius={52}
-										strokeWidth={2}
-									>
-										{data.map((_, index) => (
-											<Cell key={index} fill={COLORS[index % COLORS.length]} />
-										))}
-									</Pie>
-									<ChartLegend content={<ChartLegendContent nameKey="name" />} />
-								</PieChart>
-							</ChartContainer>
-						</div>
-					</div>
-				</div>,
-				document.body,
 			)}
-	</>
+			{mounted &&
+				active &&
+				createPortal(
+					<div className={accentClassName}>
+						<div
+							className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-6"
+							onClick={() => setActive(false)}
+						>
+							<div
+								className="relative w-full max-w-xl rounded-2xl border border-border bg-card p-6 shadow-2xl"
+								onClick={(e) => e.stopPropagation()}
+							>
+								<button
+									onClick={() => setActive(false)}
+									className="absolute top-4 right-4 text-muted-foreground hover:text-foreground transition-colors"
+								>
+									<X size={18} />
+								</button>
+								<p className="text-lg font-semibold mb-1">Traffic Sources</p>
+								<p className="text-xs text-muted-foreground mb-6">This month</p>
+								<ChartContainer config={chartConfig} className="h-64 w-full">
+									<PieChart>
+										<ChartTooltip
+											content={<ChartTooltipContent nameKey="name" />}
+										/>
+										<Pie
+											data={data}
+											dataKey="value"
+											nameKey="name"
+											cx="50%"
+											cy="50%"
+											outerRadius={100}
+											innerRadius={52}
+											strokeWidth={2}
+										>
+											{data.map((_, index) => (
+												<Cell
+													key={index}
+													fill={COLORS[index % COLORS.length]}
+												/>
+											))}
+										</Pie>
+										<ChartLegend
+											content={<ChartLegendContent nameKey="name" />}
+										/>
+									</PieChart>
+								</ChartContainer>
+							</div>
+						</div>
+					</div>,
+					document.body,
+				)}
+		</>
 	);
 }
