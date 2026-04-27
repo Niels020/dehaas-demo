@@ -5,9 +5,10 @@ export default function Home() {
 		<main>
 			<section className="relative h-[70vh] min-h-[400px] w-full">
 				<Image
-					src="/steve-busch-JD7T8Y1B79U-unsplash.jpg"
-					alt="Starry night sky"
+					src="/aperture-vintage-Z6EpCdMcoUU-unsplash.jpg"
+					alt="Dark mode hero"
 					fill
+					sizes="100vw"
 					className="object-cover dark:block hidden dark:brightness-75"
 					priority
 				/>
@@ -15,9 +16,13 @@ export default function Home() {
 					src="/gabriel-alenius-USXfF_ONUGo-unsplash.jpg"
 					alt="Misty forest landscape"
 					fill
+					sizes="100vw"
 					className="object-cover dark:hidden block"
 					priority
 				/>
+
+				{/* Bottom fade to background */}
+				<div className="absolute bottom-0 left-0 right-0 h-1/2 z-10 bg-gradient-to-b from-transparent to-background pointer-events-none" />
 
 				<div className="relative z-10 flex h-full items-center justify-center pointer-events-none">
 					<div className="max-w-2xl text-center space-y-6 px-4 pointer-events-auto">

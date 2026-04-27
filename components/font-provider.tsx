@@ -1,11 +1,11 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState } from "react";
 
-const fonts = [
+export const fonts = [
 	{
 		key: "geist-sans",
-		label: "Sans",
+		label: "Geist",
 		className: "font-[family-name:var(--font-geist-sans)]",
 	},
 	{
@@ -14,56 +14,72 @@ const fonts = [
 		className: "font-[family-name:var(--font-geist-mono)]",
 	},
 	{
-		key: "serif",
-		label: "Serif",
+		key: "playfair",
+		label: "Playfair",
 		className: "font-[family-name:var(--font-playfair)]",
 	},
 	{
-		key: "rounded",
-		label: "Rounded",
+		key: "nunito",
+		label: "Nunito",
 		className: "font-[family-name:var(--font-nunito)]",
+	},
+	{
+		key: "inter",
+		label: "Inter",
+		className: "font-[family-name:var(--font-inter)]",
+	},
+	{
+		key: "lora",
+		label: "Lora",
+		className: "font-[family-name:var(--font-lora)]",
+	},
+	{
+		key: "raleway",
+		label: "Raleway",
+		className: "font-[family-name:var(--font-raleway)]",
+	},
+	{
+		key: "space-grotesk",
+		label: "Grotesk",
+		className: "font-[family-name:var(--font-space-grotesk)]",
+	},
+	{
+		key: "dm-serif",
+		label: "DM Serif",
+		className: "font-[family-name:var(--font-dm-serif)]",
+	},
+	{
+		key: "fira-code",
+		label: "Fira",
+		className: "font-[family-name:var(--font-fira-code)]",
+	},
+	{
+		key: "merriweather",
+		label: "Merriweather",
+		className: "font-[family-name:var(--font-merriweather)]",
+	},
+	{
+		key: "space-mono",
+		label: "Space Mono",
+		className: "font-[family-name:var(--font-space-mono)]",
 	},
 ] as const;
 
 export type FontKey = (typeof fonts)[number]["key"];
 
-function isFontKey(value: string | null): value is FontKey {
-	return fonts.some((candidate) => candidate.key === value);
-}
-
 type FontContextType = {
 	font: FontKey;
 	fontLabel: string;
 	fontClassName: string;
-	cycleFont: () => void;
+	setFont: (key: FontKey) => void;
 };
 
 const FontContext = createContext<FontContextType | undefined>(undefined);
 
 export function FontProvider({ children }: { children: React.ReactNode }) {
-	const [font, setFont] = useState<FontKey>(() => {
-		if (typeof window === "undefined") {
-			return "geist-sans";
-		}
+	const [font, setFont] = useState<FontKey>("geist-sans");
 
-		const stored = localStorage.getItem("font");
-		return isFontKey(stored) ? stored : "geist-sans";
-	});
-
-	useEffect(() => {
-		document.documentElement.setAttribute("data-font", font);
-	}, [font]);
-
-	const currentIndex = fonts.findIndex((f) => f.key === font);
-	const current = fonts[currentIndex];
-
-	const cycleFont = () => {
-		const nextIndex = (currentIndex + 1) % fonts.length;
-		const next = fonts[nextIndex];
-		setFont(next.key);
-		localStorage.setItem("font", next.key);
-		document.documentElement.setAttribute("data-font", next.key);
-	};
+	const current = fonts.find((f) => f.key === font)!;
 
 	return (
 		<FontContext.Provider
@@ -71,7 +87,7 @@ export function FontProvider({ children }: { children: React.ReactNode }) {
 				font,
 				fontLabel: current.label,
 				fontClassName: current.className,
-				cycleFont,
+				setFont,
 			}}
 		>
 			{children}

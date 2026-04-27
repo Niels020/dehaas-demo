@@ -1,9 +1,8 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { SettingsIcon, MoonIcon, SunIcon, TypeIcon } from "lucide-react";
+import { SettingsIcon, MoonIcon, SunIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useFont } from "@/components/font-provider";
 import {
 	Popover,
 	PopoverContent,
@@ -12,7 +11,6 @@ import {
 
 export function SettingsMenu() {
 	const { setTheme, resolvedTheme } = useTheme();
-	const { fontLabel, cycleFont } = useFont();
 
 	return (
 		<Popover>
@@ -42,18 +40,6 @@ export function SettingsMenu() {
 							<SunIcon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 							<MoonIcon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
 							<span className="sr-only">Toggle theme</span>
-						</Button>
-					</div>
-					<div className="flex items-center justify-between">
-						<span className="text-sm">Font</span>
-						<Button
-							variant="ghost"
-							size="sm"
-							className="h-8 gap-1.5"
-							onClick={cycleFont}
-						>
-							<TypeIcon className="h-4 w-4" />
-							<span className="text-xs">{fontLabel}</span>
 						</Button>
 					</div>
 				</div>

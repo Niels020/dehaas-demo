@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, SunIcon, MoonIcon } from "lucide-react";
+import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { SettingsMenu } from "@/components/settings-menu";
 import {
 	Sheet,
 	SheetContent,
@@ -17,14 +17,13 @@ import {
 
 const navItems = [
 	{ label: "Home", href: "/" },
-	{ label: "About", href: "/about" },
 	{ label: "Creations", href: "/creations" },
-	{ label: "Contact", href: "/contact" },
 ];
 
 export function Navigation() {
 	const pathname = usePathname();
 	const [open, setOpen] = useState(false);
+	const { setTheme, resolvedTheme } = useTheme();
 
 	return (
 		<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -35,6 +34,7 @@ export function Navigation() {
 						alt="DeHaas Demo"
 						width={120}
 						height={40}
+						style={{ height: "auto" }}
 						priority
 					/>
 				</Link>
@@ -55,11 +55,31 @@ export function Navigation() {
 							{item.label}
 						</Link>
 					))}
-					<SettingsMenu />
+					<Button
+						variant="ghost"
+						size="icon"
+						onClick={() =>
+							setTheme(resolvedTheme === "dark" ? "light" : "dark")
+						}
+					>
+						<SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+						<MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+						<span className="sr-only">Toggle theme</span>
+					</Button>
 				</nav>
 
 				<div className="flex items-center gap-1 md:hidden">
-					<SettingsMenu />
+					<Button
+						variant="ghost"
+						size="icon"
+						onClick={() =>
+							setTheme(resolvedTheme === "dark" ? "light" : "dark")
+						}
+					>
+						<SunIcon className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+						<MoonIcon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+						<span className="sr-only">Toggle theme</span>
+					</Button>
 					{/* Mobile nav */}
 					<Sheet open={open} onOpenChange={setOpen}>
 						<SheetTrigger

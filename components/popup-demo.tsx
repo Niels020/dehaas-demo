@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
+import { useAccent } from "@/components/accent-provider";
 
 const ZONES = [
 	{ top: [5, 20], left: [5, 25] },
@@ -32,6 +33,7 @@ function getRandomPosition() {
 }
 
 export function PopupDemo() {
+	const { accentClassName } = useAccent();
 	const [active, setActive] = useState(false);
 	const [showPopup, setShowPopup] = useState(false);
 	const [dismissCount, setDismissCount] = useState(0);
@@ -101,7 +103,7 @@ export function PopupDemo() {
 			{active &&
 				mounted &&
 				createPortal(
-					<>
+					<div className={accentClassName}>
 						{/* Full-screen dimmed overlay */}
 						<div className="fixed inset-0 bg-foreground/20 z-50" />
 						{/* Popup */}
@@ -123,14 +125,20 @@ export function PopupDemo() {
 										<X className="h-4 w-4" />
 									</button>
 								</div>
-								<div className="flex items-center justify-center h-24">
+								<div className="flex flex-col items-center justify-center gap-3 h-24">
 									<p className="text-base text-foreground text-center">
 										Welcome to my demo site.
 									</p>
+									<button
+										onClick={dismissPopup}
+										className="rounded-md bg-primary px-4 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+									>
+										Got it
+									</button>
 								</div>
 							</div>
 						)}
-					</>,
+					</div>,
 					document.body,
 				)}
 		</div>
