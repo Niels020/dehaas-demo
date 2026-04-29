@@ -17,6 +17,7 @@ import {
 
 const navItems = [
 	{ label: "Home", href: "/" },
+	{ label: "Inspiration", href: "/inspiration" },
 	{ label: "Creations", href: "/creations" },
 ];
 
