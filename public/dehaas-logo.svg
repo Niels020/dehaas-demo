@@ -1,0 +1,11 @@
+<svg viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>dehaas webservice</title>
+  <desc>Two vertical strokes suggesting hare ears, alongside the wordmark &#34;dehaas&#34; with &#34;webservice&#34; beneath.</desc>
+  <defs>
+    
+  </defs>
+  <line class="mark" x1="18" y1="16" x2="18" y2="72" stroke-width="7" stroke-linecap="round"></line>
+  <line class="mark" x1="38" y1="32" x2="38" y2="72" stroke-width="7" stroke-linecap="round"></line>
+  <text class="wordmark" x="62" y="72">dehaas</text>
+  <text class="tagline" x="63" y="100">webservice</text>
+</svg>
