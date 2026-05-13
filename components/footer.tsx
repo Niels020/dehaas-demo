@@ -3,7 +3,13 @@ import Link from "next/link";
 export function Footer() {
 	return (
 		<footer className="border-t py-6">
-			<div className="container mx-auto flex items-center justify-center px-4">
+			<div className="container mx-auto flex items-center justify-center gap-6 px-4">
+				<Link
+					href="/privacy"
+					className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+				>
+					Privacy
+				</Link>
 				<Link
 					href="https://linkedin.com"
 					target="_blank"
