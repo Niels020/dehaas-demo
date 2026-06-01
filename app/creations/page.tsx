@@ -8,6 +8,8 @@ import { PieChartDemo } from "@/components/pie-chart-demo";
 import { GameOfLifeDemo } from "@/components/game-of-life-demo";
 import { FontToggleButton } from "@/components/font-toggle-button";
 import { AccentPickerButton } from "@/components/accent-picker-button";
+import { TypingSpeedDemo } from "@/components/typing-speed-demo";
+import { KanbanDemo } from "@/components/kanban-demo";
 
 export const metadata: Metadata = {
 	title: "Creations",
@@ -36,6 +38,8 @@ export default function Creations() {
 				<BarChartDemo />
 				<LineChartDemo />
 				<PieChartDemo />
+				<TypingSpeedDemo />
+				<KanbanDemo />
 				<GameOfLifeDemo />
 			</div>
 		</main>

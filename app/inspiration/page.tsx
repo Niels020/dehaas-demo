@@ -6,28 +6,52 @@ import { X } from "lucide-react";
 import { ClassyMinimalHome } from "@/components/inspiration/classy-minimal-home";
 import { CorkyCreativeHome } from "@/components/inspiration/corky-creative-home";
 import { WarmInvitingHome } from "@/components/inspiration/warm-inviting-home";
+import { DarkSaasHome } from "@/components/inspiration/dark-saas-home";
+import { WellnessStudioHome } from "@/components/inspiration/wellness-studio-home";
+import { StreetwearBrandHome } from "@/components/inspiration/streetwear-brand-home";
 
 const samples = [
 	{
 		id: "classy-minimal",
-		label: "Classy Minimal",
+		label: "Design Studio",
 		description:
 			"A high-end furniture store — timeless pieces, honest materials, refined showroom feel.",
 		Component: ClassyMinimalHome,
 	},
 	{
 		id: "corky-creative",
-		label: "Corky Creative",
+		label: "Creative Branding",
 		description:
 			"A bold design studio — branding, UI/UX and motion work for brands that want to be remembered.",
 		Component: CorkyCreativeHome,
 	},
 	{
 		id: "warm-inviting",
-		label: "Warm & Inviting",
+		label: "Coffee Shop",
 		description:
 			"A specialty coffee shop — single-origin brews, homemade pastries and a seat by the window.",
 		Component: WarmInvitingHome,
+	},
+	{
+		id: "dark-saas",
+		label: "Dark SaaS",
+		description:
+			"A developer observability platform — real-time logs, traces and metrics built for engineers who ship fast.",
+		Component: DarkSaasHome,
+	},
+	{
+		id: "wellness-studio",
+		label: "Wellness Studio",
+		description:
+			"A yoga and mindfulness studio — calm spaces, expert teachers and a community rooted in intention.",
+		Component: WellnessStudioHome,
+	},
+	{
+		id: "streetwear-brand",
+		label: "Streetwear Brand",
+		description:
+			"A cult streetwear label — limited drops, raw energy and a look that speaks before you do.",
+		Component: StreetwearBrandHome,
 	},
 ];
 
