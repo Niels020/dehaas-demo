@@ -1,3 +1,5 @@
+import { Clapperboard, MonitorSmartphone, PenTool } from "lucide-react";
+
 export function CorkyCreativeHome() {
 	return (
 		<div
@@ -92,21 +94,21 @@ export function CorkyCreativeHome() {
 			<section className="px-8 py-16 grid grid-cols-3 gap-6">
 				{[
 					{
-						emoji: "✏️",
+						Icon: PenTool,
 						title: "Brand Identity",
 						color: "#ff6b6b",
 						desc: "Logo, colour, type & tone — your full brand system from scratch.",
 						rotate: "-1deg",
 					},
 					{
-						emoji: "🖥️",
+						Icon: MonitorSmartphone,
 						title: "UI/UX Design",
 						color: "#ffd60a",
 						desc: "Interfaces that delight users and convert visitors into fans.",
 						rotate: "1.5deg",
 					},
 					{
-						emoji: "🎬",
+						Icon: Clapperboard,
 						title: "Motion & Content",
 						color: "#7b61ff",
 						desc: "Animations, reels & visual content that stops the scroll.",
@@ -121,7 +123,9 @@ export function CorkyCreativeHome() {
 							transform: `rotate(${card.rotate})`,
 						}}
 					>
-						<span className="text-5xl">{card.emoji}</span>
+						<span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#111111]">
+							<card.Icon className="h-7 w-7" style={{ color: card.color }} />
+						</span>
 						<h3 className="text-xl font-black mt-4 mb-2 text-[#111111]">
 							{card.title}
 						</h3>

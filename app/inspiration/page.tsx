@@ -9,6 +9,9 @@ import { WarmInvitingHome } from "@/components/inspiration/warm-inviting-home";
 import { DarkSaasHome } from "@/components/inspiration/dark-saas-home";
 import { WellnessStudioHome } from "@/components/inspiration/wellness-studio-home";
 import { StreetwearBrandHome } from "@/components/inspiration/streetwear-brand-home";
+import { AdventureTravelHome } from "@/components/inspiration/adventure-travel-home";
+import { FineDiningHome } from "@/components/inspiration/fine-dining-home";
+import { FintechHome } from "@/components/inspiration/fintech-home";
 
 const samples = [
 	{
@@ -53,6 +56,27 @@ const samples = [
 			"A cult streetwear label — limited drops, raw energy and a look that speaks before you do.",
 		Component: StreetwearBrandHome,
 	},
+	{
+		id: "adventure-travel",
+		label: "Adventure Travel",
+		description:
+			"A small-group expedition company — wild routes, local guides and mountains without the crowds.",
+		Component: AdventureTravelHome,
+	},
+	{
+		id: "fine-dining",
+		label: "Fine Dining",
+		description:
+			"A Michelin-starred restaurant — wood-fired cooking, a seasonal tasting menu and candlelit calm.",
+		Component: FineDiningHome,
+	},
+	{
+		id: "fintech",
+		label: "Fintech App",
+		description:
+			"A modern challenger bank — zero-fee spending, instant transfers and savings on autopilot.",
+		Component: FintechHome,
+	},
 ];
 
 export default function InspirationPage() {
@@ -81,7 +105,7 @@ export default function InspirationPage() {
 			<div className="max-w-2xl mx-auto space-y-6 text-center">
 				<h1 className="text-4xl font-bold tracking-tight">Inspiration</h1>
 				<p className="text-lg text-muted-foreground">
-					Three distinct homepage styles to spark your creative vision.
+					Nine distinct homepage styles to spark your creative vision.
 				</p>
 			</div>
 

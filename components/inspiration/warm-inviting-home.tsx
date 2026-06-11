@@ -116,8 +116,8 @@ export function WarmInvitingHome() {
 			<section className="grid grid-cols-2 gap-0">
 				<div className="relative h-72 overflow-hidden">
 					<Image
-						src="/ante-samarzija-lsmu0rUhUOk-unsplash.jpg"
-						alt="Coffee shop interior"
+						src="/rizky-subagja-1k7TnX5GAww-unsplash.jpg"
+						alt="Café terrace with a latte, croissant and open magazine on wooden tables"
 						fill
 						sizes="50vw"
 						className="object-cover object-center"
@@ -157,11 +157,11 @@ export function WarmInvitingHome() {
 			{/* Atmosphere image */}
 			<section className="relative h-64 overflow-hidden">
 				<Image
-					src="/rizky-subagja-1k7TnX5GAww-unsplash.jpg"
-					alt="Coffee close-up"
+					src="/ante-samarzija-lsmu0rUhUOk-unsplash.jpg"
+					alt="Steaming coffee cup with beans splashing on a dark background"
 					fill
 					sizes="100vw"
-					className="object-cover object-center"
+					className="object-cover object-[center_70%]"
 				/>
 				<div className="absolute inset-0 bg-[#3d2c1e]/20" />
 			</section>

@@ -1,39 +1,47 @@
 import Image from "next/image";
+import {
+	BarChart3,
+	Bell,
+	Cloud,
+	Lock,
+	Waypoints,
+	Zap,
+} from "lucide-react";
 
 export function DarkSaasHome() {
 	const features = [
 		{
-			icon: "⚡",
+			Icon: Zap,
 			title: "Real-time Logs",
 			description:
 				"Stream millions of events per second with zero configuration.",
 		},
 		{
-			icon: "🔍",
+			Icon: Waypoints,
 			title: "Distributed Tracing",
 			description:
 				"Follow a request across every service with full context.",
 		},
 		{
-			icon: "📊",
+			Icon: BarChart3,
 			title: "Dashboards",
 			description:
 				"Drag-and-drop dashboards. No PromQL required.",
 		},
 		{
-			icon: "🔔",
+			Icon: Bell,
 			title: "Alerts",
 			description:
 				"PagerDuty, Slack or webhooks — notify the right people, instantly.",
 		},
 		{
-			icon: "🔐",
+			Icon: Lock,
 			title: "SSO & RBAC",
 			description:
 				"Enterprise-grade access controls out of the box.",
 		},
 		{
-			icon: "☁️",
+			Icon: Cloud,
 			title: "Any Cloud",
 			description: "AWS, GCP, Azure or on-prem — one SDK, everywhere.",
 		},
@@ -210,7 +218,9 @@ export function DarkSaasHome() {
 								key={feature.title}
 								className="rounded-2xl border border-[#1f1f2e] bg-[#13131a] p-6 hover:border-[#6366f1]/60 transition-colors"
 							>
-								<div className="mb-4 text-2xl">{feature.icon}</div>
+								<div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-[#6366f1]/10">
+									<feature.Icon className="h-5 w-5 text-[#818cf8]" />
+								</div>
 								<h3 className="mb-2 text-sm font-bold text-white">
 									{feature.title}
 								</h3>

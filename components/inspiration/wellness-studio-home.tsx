@@ -1,26 +1,27 @@
 import Image from "next/image";
+import { Leaf, Moon, Sparkles, Waves } from "lucide-react";
 
 const practices = [
 	{
-		symbol: "🌿",
+		Icon: Leaf,
 		title: "Hatha",
 		description: "Grounding sequences that build steadiness, mobility, and breath awareness.",
 		duration: "60 – 90 min",
 	},
 	{
-		symbol: "🌊",
+		Icon: Waves,
 		title: "Vinyasa",
 		description: "Fluid movement and mindful transitions to awaken strength and spaciousness.",
 		duration: "60 min",
 	},
 	{
-		symbol: "🌙",
+		Icon: Moon,
 		title: "Yin",
 		description: "Longer holds and quiet stillness to soften tension and invite deep release.",
 		duration: "75 min",
 	},
 	{
-		symbol: "✦",
+		Icon: Sparkles,
 		title: "Meditation",
 		description: "Simple guided practices for clarity, rest, and returning to the present.",
 		duration: "30 – 45 min",
@@ -129,7 +130,9 @@ export function WellnessStudioHome() {
 				<div className="grid grid-cols-4 gap-6">
 					{practices.map((practice) => (
 						<div key={practice.title} className="bg-[#edeae3] p-8 text-center">
-							<div className="text-4xl">{practice.symbol}</div>
+							<div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#5c7a5c]/15">
+								<practice.Icon className="h-6 w-6 text-[#5c7a5c]" strokeWidth={1.5} />
+							</div>
 							<h3 className="mt-4 mb-2 text-base font-light tracking-wider text-[#2d3a2d]">
 								{practice.title}
 							</h3>

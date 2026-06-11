@@ -6,18 +6,24 @@ const products = [
 		price: "€180",
 		status: "AVAILABLE",
 		statusClassName: "text-[#c8ff00]",
+		image: "/hoodie-unsplash.jpg",
+		alt: "Figure in a grey hoodie seen from behind in an open field",
 	},
 	{
 		name: "CARBON TEE",
 		price: "€85",
 		status: "SOLD OUT",
 		statusClassName: "text-[#666666]",
+		image: "/white-tee-unsplash.jpg",
+		alt: "Plain white tee worn against a blurred bright background",
 	},
 	{
-		name: "TACTICAL CARGO",
+		name: "COURT RUNNER 01",
 		price: "€240",
 		status: "AVAILABLE",
 		statusClassName: "text-[#c8ff00]",
+		image: "/sneakers-unsplash.jpg",
+		alt: "High-top sneakers resting on an outdoor court at dusk",
 	},
 ] as const;
 
@@ -124,11 +130,17 @@ export function StreetwearBrandHome() {
 				<div className="mb-8 mt-4 border-t border-[#2a2a2a]" />
 				<div className="grid grid-cols-3 gap-px bg-[#2a2a2a]">
 					{products.map((product) => (
-						<div key={product.name} className="bg-[#0d0d0d] p-6">
-							<div className="flex h-64 items-center justify-center bg-[#1a1a1a]">
-								<span className="text-xs uppercase tracking-widest text-[#2a2a2a]">
-									{product.name}
-								</span>
+						<div key={product.name} className="group bg-[#0d0d0d] p-6">
+							<div className="relative h-64 overflow-hidden bg-[#1a1a1a]">
+								<Image
+									src={product.image}
+									alt={product.alt}
+									fill
+									sizes="33vw"
+									className={`object-cover object-center grayscale-[35%] transition-all duration-500 group-hover:grayscale-0 ${
+										product.status === "SOLD OUT" ? "opacity-50" : ""
+									}`}
+								/>
 							</div>
 							<h3 className="mt-3 text-sm font-black uppercase tracking-wider text-[#f5f5f5]">
 								{product.name}
