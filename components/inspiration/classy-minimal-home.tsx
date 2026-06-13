@@ -7,11 +7,11 @@ export function ClassyMinimalHome() {
 			style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
 		>
 			{/* Navigation */}
-			<header className="flex items-center justify-between px-12 py-6 border-b border-zinc-200 bg-white">
+			<header className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6 border-b border-zinc-200 bg-white">
 				<span className="text-lg tracking-[0.35em] uppercase font-light text-zinc-800">
 					Forme
 				</span>
-				<nav className="flex gap-8 text-xs tracking-widest uppercase text-zinc-400">
+				<nav className="hidden md:flex gap-8 text-xs tracking-widest uppercase text-zinc-400">
 					<a href="#" className="hover:text-zinc-900 transition-colors">
 						Collections
 					</a>
@@ -34,23 +34,23 @@ export function ClassyMinimalHome() {
 			</header>
 
 			{/* Hero */}
-			<section className="relative grid grid-cols-2 min-h-[560px]">
+			<section className="relative grid grid-cols-1 md:grid-cols-2 min-h-0 md:min-h-[560px]">
 				{/* Left: hero image */}
-				<div className="relative overflow-hidden">
+				<div className="relative h-72 md:h-auto overflow-hidden">
 					<Image
 						src="/bench-accounting-nvzvOPQW0gc-unsplash.jpg"
 						alt="Minimal desk with chair"
 						fill
-						sizes="50vw"
+						sizes="(max-width: 768px) 100vw, 50vw"
 						className="object-cover object-center"
 					/>
 				</div>
 				{/* Right: copy */}
-				<div className="flex flex-col justify-center px-16 py-16 bg-[#f9f7f4]">
+				<div className="flex flex-col justify-center px-6 py-10 sm:px-10 md:px-16 md:py-16 bg-[#f9f7f4]">
 					<p className="text-xs tracking-[0.4em] uppercase text-zinc-400 mb-6">
 						New Collection — 2025
 					</p>
-					<h1 className="text-5xl font-light leading-snug tracking-tight text-zinc-900 mb-8">
+					<h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-snug tracking-tight text-zinc-900 mb-8">
 						Furniture that
 						<br />
 						<em>outlives</em> trends
@@ -70,7 +70,7 @@ export function ClassyMinimalHome() {
 			</section>
 
 			{/* Categories */}
-			<section className="grid grid-cols-4 border-t border-zinc-200">
+			<section className="grid grid-cols-2 sm:grid-cols-4 border-t border-zinc-200">
 				{[
 					{ label: "Seating", count: "42 pieces" },
 					{ label: "Tables", count: "28 pieces" },
@@ -79,7 +79,7 @@ export function ClassyMinimalHome() {
 				].map((cat) => (
 					<div
 						key={cat.label}
-						className="px-8 py-10 text-center border-r last:border-r-0 border-zinc-200 group cursor-pointer hover:bg-white transition-colors"
+						className="px-4 py-8 sm:px-8 sm:py-10 text-center border-b border-r last:border-r-0 sm:border-b-0 border-zinc-200 group cursor-pointer hover:bg-white transition-colors"
 					>
 						<h3 className="text-lg font-light mb-2 tracking-wide">
 							{cat.label}
@@ -95,13 +95,13 @@ export function ClassyMinimalHome() {
 			</section>
 
 			{/* Materials */}
-			<section className="py-24 px-12 bg-white">
-				<div className="grid grid-cols-2 gap-16 items-center">
+			<section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-white">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 					<div>
 						<p className="text-xs tracking-[0.4em] uppercase text-zinc-400 mb-6">
 							Our Philosophy
 						</p>
-						<h2 className="text-4xl font-light leading-snug mb-8">
+						<h2 className="text-3xl md:text-4xl font-light leading-snug mb-8">
 							Honest materials,
 							<br />
 							conscious craft
@@ -140,13 +140,13 @@ export function ClassyMinimalHome() {
 			</section>
 
 			{/* Featured pieces */}
-			<section className="py-24 px-12 bg-[#f9f7f4]">
+			<section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-12 bg-[#f9f7f4]">
 				<div className="flex items-end justify-between mb-12">
 					<div>
 						<p className="text-xs tracking-[0.4em] uppercase text-zinc-400 mb-3">
 							Featured
 						</p>
-						<h2 className="text-4xl font-light">New arrivals</h2>
+						<h2 className="text-3xl md:text-4xl font-light">New arrivals</h2>
 					</div>
 					<a
 						href="#"
@@ -155,7 +155,7 @@ export function ClassyMinimalHome() {
 						View all
 					</a>
 				</div>
-				<div className="grid grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 					{/* Card 1 — lounge chair */}
 					<div className="group cursor-pointer">
 						<div className="relative h-64 rounded-sm mb-4 overflow-hidden bg-[#ebebeb]">
@@ -163,7 +163,7 @@ export function ClassyMinimalHome() {
 								src="/ellen-qin-bxLhqZIp2LI-unsplash.jpg"
 								alt="Séville Lounge Chair"
 								fill
-								sizes="33vw"
+								sizes="(max-width: 640px) 100vw, 33vw"
 								className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
 							/>
 						</div>
@@ -179,7 +179,7 @@ export function ClassyMinimalHome() {
 								src="/sarah-dorweiler-WohqvxsSNU8-unsplash.jpg"
 								alt="Ardoise Dining Table"
 								fill
-								sizes="33vw"
+								sizes="(max-width: 640px) 100vw, 33vw"
 								className="object-cover object-bottom group-hover:scale-105 transition-transform duration-500"
 							/>
 						</div>
@@ -195,7 +195,7 @@ export function ClassyMinimalHome() {
 								src="/parichehr-rezaei-j71LdLOCTIM-unsplash.jpg"
 								alt="Belvédère Sofa"
 								fill
-								sizes="33vw"
+								sizes="(max-width: 640px) 100vw, 33vw"
 								className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
 							/>
 						</div>
@@ -208,7 +208,7 @@ export function ClassyMinimalHome() {
 			</section>
 
 			{/* Showroom CTA */}
-			<section className="py-20 px-12 bg-zinc-900 text-white text-center">
+			<section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-12 bg-zinc-900 text-white text-center">
 				<p className="text-xs tracking-[0.4em] uppercase text-zinc-400 mb-6">
 					Experience in person
 				</p>
@@ -226,11 +226,11 @@ export function ClassyMinimalHome() {
 			</section>
 
 			{/* Footer */}
-			<footer className="border-t border-zinc-200 bg-white px-12 py-8 flex justify-between items-center text-xs text-zinc-400 tracking-widest uppercase">
+			<footer className="border-t border-zinc-200 bg-white px-4 sm:px-6 md:px-12 py-8 flex flex-col sm:flex-row gap-4 justify-between items-center text-xs text-zinc-400 tracking-widest uppercase text-center">
 				<span className="text-zinc-700 font-light text-base tracking-[0.35em]">
 					Forme
 				</span>
-				<nav className="flex gap-8">
+				<nav className="flex flex-wrap justify-center gap-4 sm:gap-8">
 					<a href="#" className="hover:text-zinc-700 transition-colors">
 						Collections
 					</a>

@@ -7,11 +7,11 @@ export function CorkyCreativeHome() {
 			style={{ fontFamily: "'Arial', sans-serif" }}
 		>
 			{/* Navigation */}
-			<header className="flex items-center justify-between px-8 py-5 bg-[#111111]">
+			<header className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-5 bg-[#111111]">
 				<span className="text-2xl font-black text-white">
 					✦ Pixel<span className="text-[#ffd60a]">Push</span>
 				</span>
-				<nav className="flex gap-6 text-sm font-bold text-white/70">
+				<nav className="hidden md:flex gap-6 text-sm font-bold text-white/70">
 					<a href="#" className="hover:text-[#ffd60a] transition-colors">
 						Work
 					</a>
@@ -34,7 +34,7 @@ export function CorkyCreativeHome() {
 			</header>
 
 			{/* Hero */}
-			<section className="relative px-8 py-20 overflow-hidden">
+			<section className="relative px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 overflow-hidden">
 				<div className="absolute top-0 right-0 w-80 h-80 bg-[#ff6b6b] rounded-full -translate-y-1/3 translate-x-1/4 opacity-20" />
 				<div className="absolute bottom-0 left-0 w-56 h-56 bg-[#ffd60a] rounded-full translate-y-1/3 -translate-x-1/4 opacity-30" />
 				<div className="absolute top-1/3 right-1/4 w-36 h-36 bg-[#7b61ff] rounded-full opacity-15" />
@@ -42,14 +42,14 @@ export function CorkyCreativeHome() {
 					<span className="inline-block bg-[#ffd60a] text-[#111111] font-black text-xs px-4 py-1.5 rounded-full mb-8 uppercase tracking-wider rotate-[-1deg]">
 						🎨 Design Studio
 					</span>
-					<h1 className="text-7xl font-black leading-none tracking-tighter text-[#111111] mb-8">
+					<h1 className="text-4xl sm:text-5xl md:text-7xl font-black leading-none tracking-tighter text-[#111111] mb-8">
 						We design
 						<br />
 						<span className="text-[#ff6b6b]">brands</span> that
 						<br />
 						people <span className="italic">remember</span>
 					</h1>
-					<p className="text-xl text-zinc-600 max-w-md leading-relaxed">
+					<p className="text-base sm:text-lg md:text-xl text-zinc-600 max-w-md leading-relaxed">
 						Branding, UI/UX & digital campaigns for companies that want to be
 						unforgettable.
 					</p>
@@ -91,7 +91,7 @@ export function CorkyCreativeHome() {
 			</div>
 
 			{/* Services */}
-			<section className="px-8 py-16 grid grid-cols-3 gap-6">
+			<section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 grid grid-cols-1 sm:grid-cols-3 gap-6">
 				{[
 					{
 						Icon: PenTool,
@@ -137,7 +137,7 @@ export function CorkyCreativeHome() {
 			</section>
 
 			{/* Case studies */}
-			<section className="px-8 py-10 bg-[#111111]">
+			<section className="px-4 sm:px-6 md:px-8 py-10 bg-[#111111]">
 				<div className="flex items-center justify-between mb-8">
 					<h2 className="text-3xl font-black text-white">
 						Selected <span className="text-[#ffd60a]">work</span>
@@ -149,7 +149,7 @@ export function CorkyCreativeHome() {
 						View all →
 					</a>
 				</div>
-				<div className="grid grid-cols-2 gap-4">
+				<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 					{[
 						{
 							label: "Brand Overhaul",
@@ -182,11 +182,11 @@ export function CorkyCreativeHome() {
 			</section>
 
 			{/* Process */}
-			<section className="px-8 py-16 bg-[#f0ede8]">
-				<h2 className="text-4xl font-black text-[#111111] mb-10">
+			<section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 bg-[#f0ede8]">
+				<h2 className="text-3xl sm:text-4xl font-black text-[#111111] mb-10">
 					How we <span className="text-[#ff6b6b] italic">work</span>
 				</h2>
-				<div className="grid grid-cols-4 gap-6">
+				<div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
 					{[
 						{
 							step: "01",
@@ -221,23 +221,23 @@ export function CorkyCreativeHome() {
 			</section>
 
 			{/* CTA */}
-			<section className="px-8 py-20 text-center">
-				<h2 className="text-5xl font-black text-[#111111] mb-4">
+			<section className="px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20 text-center">
+				<h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#111111] mb-4">
 					Ready to stand out? 👀
 				</h2>
-				<p className="text-zinc-600 mb-8 text-lg">
+				<p className="text-zinc-600 mb-8 text-base sm:text-lg">
 					Let&apos;s make something you&apos;re proud to show off.
 				</p>
 				<a
 					href="#"
-					className="inline-block bg-[#111111] text-white px-12 py-5 rounded-full font-black text-sm hover:bg-[#ff6b6b] transition-colors"
+					className="inline-block bg-[#111111] text-white px-8 sm:px-12 py-5 rounded-full font-black text-sm hover:bg-[#ff6b6b] transition-colors"
 				>
 					Start a project ✦
 				</a>
 			</section>
 
 			{/* Footer */}
-			<footer className="bg-[#111111] px-8 py-8 flex justify-between items-center">
+			<footer className="bg-[#111111] px-4 sm:px-6 md:px-8 py-8 flex flex-col sm:flex-row gap-4 justify-between items-center text-center">
 				<span className="text-white font-black text-xl">✦ PixelPush</span>
 				<div className="flex gap-6 text-white/50 text-xs font-bold uppercase tracking-widest">
 					<a href="#" className="hover:text-white transition-colors">

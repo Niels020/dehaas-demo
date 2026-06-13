@@ -159,11 +159,11 @@ export default function InspirationPage() {
 					<div className="fixed inset-0 z-[200] overflow-y-auto bg-background">
 						<button
 							onClick={() => setActive(null)}
-							className="fixed top-4 right-4 z-[210] flex items-center gap-2 rounded-full bg-black/80 px-4 py-2 text-sm font-medium text-white shadow-lg hover:bg-black transition-colors backdrop-blur-sm"
+							className="fixed top-3 right-3 sm:top-4 sm:right-4 z-[210] flex items-center gap-2 rounded-full bg-black/80 p-2.5 sm:px-4 sm:py-2 text-sm font-medium text-white shadow-lg hover:bg-black transition-colors backdrop-blur-sm"
 							aria-label="Close preview"
 						>
 							<X className="h-4 w-4" />
-							Close
+							<span className="hidden sm:inline">Close</span>
 						</button>
 						<activeSample.Component />
 					</div>,

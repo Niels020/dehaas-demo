@@ -7,7 +7,7 @@ export function WarmInvitingHome() {
 			style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
 		>
 			{/* Navigation */}
-			<header className="flex items-center justify-between px-10 py-4 bg-[#3d2c1e]">
+			<header className="flex items-center justify-between px-4 sm:px-6 md:px-10 py-4 bg-[#3d2c1e]">
 				<div>
 					<span className="text-xl font-bold text-[#f5dfc0]">
 						The Daily Grind
@@ -16,7 +16,7 @@ export function WarmInvitingHome() {
 						Specialty Coffee
 					</p>
 				</div>
-				<nav className="flex gap-8 text-sm text-[#c4a882]">
+				<nav className="hidden md:flex gap-8 text-sm text-[#c4a882]">
 					<a href="#" className="hover:text-[#f5dfc0] transition-colors">
 						Menu
 					</a>
@@ -39,7 +39,7 @@ export function WarmInvitingHome() {
 			</header>
 
 			{/* Hero */}
-			<section className="relative py-24 px-10 overflow-hidden bg-[#3d2c1e]">
+			<section className="relative py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-10 overflow-hidden bg-[#3d2c1e]">
 				<Image
 					src="/nathan-dumlao-pMW4jzELQCw-unsplash.jpg"
 					alt="Coffee shop atmosphere"
@@ -53,14 +53,14 @@ export function WarmInvitingHome() {
 					<p className="text-[#c26f3c] font-semibold mb-4 text-sm uppercase tracking-wider">
 						Freshly roasted daily
 					</p>
-					<h1 className="text-6xl leading-tight font-bold text-[#f5dfc0] mb-6">
+					<h1 className="text-4xl sm:text-5xl md:text-6xl leading-tight font-bold text-[#f5dfc0] mb-6">
 						Your favourite
 						<br />
 						corner of the
 						<br />
 						<em className="text-[#c26f3c]">world</em>
 					</h1>
-					<p className="text-lg text-[#c4a882] max-w-sm leading-relaxed mb-10">
+					<p className="text-base sm:text-lg text-[#c4a882] max-w-sm leading-relaxed mb-10">
 						Single-origin brews, homemade pastries and a seat by the window —
 						every morning since 2017.
 					</p>
@@ -82,12 +82,12 @@ export function WarmInvitingHome() {
 			</section>
 
 			{/* Our story */}
-			<section className="px-10 py-20 bg-[#fdf6ee]">
+			<section className="px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-20 bg-[#fdf6ee]">
 				<div className="max-w-2xl mx-auto text-center">
 					<p className="text-[#c26f3c] text-xs uppercase tracking-widest font-semibold mb-6">
 						In the cup
 					</p>
-					<h2 className="text-4xl font-bold text-[#3d2c1e] mb-8 leading-snug">
+					<h2 className="text-3xl sm:text-4xl font-bold text-[#3d2c1e] mb-8 leading-snug">
 						Every bean has
 						<br />a story worth tasting
 					</h2>
@@ -113,17 +113,17 @@ export function WarmInvitingHome() {
 			</section>
 
 			{/* Story / ambience */}
-			<section className="grid grid-cols-2 gap-0">
+			<section className="grid grid-cols-1 md:grid-cols-2 gap-0">
 				<div className="relative h-72 overflow-hidden">
 					<Image
 						src="/rizky-subagja-1k7TnX5GAww-unsplash.jpg"
 						alt="Café terrace with a latte, croissant and open magazine on wooden tables"
 						fill
-						sizes="50vw"
+						sizes="(max-width: 768px) 100vw, 50vw"
 						className="object-cover object-center"
 					/>
 				</div>
-				<div className="bg-[#fdf6ee] px-12 flex flex-col justify-center py-12">
+				<div className="bg-[#fdf6ee] px-6 sm:px-10 md:px-12 flex flex-col justify-center py-10 md:py-12">
 					<p className="text-[#c26f3c] text-xs uppercase tracking-widest font-semibold mb-4">
 						Our story
 					</p>
@@ -141,7 +141,7 @@ export function WarmInvitingHome() {
 			</section>
 
 			{/* Testimonial */}
-			<section className="bg-[#c26f3c] px-10 py-14 text-center">
+			<section className="bg-[#c26f3c] px-4 sm:px-6 md:px-10 py-14 text-center">
 				<p className="text-white/70 text-xs uppercase tracking-widest mb-6 font-semibold">
 					From our regulars
 				</p>
@@ -167,8 +167,8 @@ export function WarmInvitingHome() {
 			</section>
 
 			{/* Loyalty & Newsletter */}
-			<section className="bg-[#f4ddc8] px-10 py-16">
-				<div className="grid grid-cols-2 gap-12 items-center">
+			<section className="bg-[#f4ddc8] px-4 sm:px-6 md:px-10 py-12 sm:py-16">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
 					<div>
 						<span className="text-4xl">🎟️</span>
 						<h2 className="text-3xl font-bold text-[#3d2c1e] mt-4 mb-3">
@@ -208,14 +208,14 @@ export function WarmInvitingHome() {
 			</section>
 
 			{/* Footer */}
-			<footer className="bg-[#3d2c1e] px-10 py-8 flex justify-between items-center text-[#c4a882] text-sm">
+			<footer className="bg-[#3d2c1e] px-4 sm:px-6 md:px-10 py-8 flex flex-col sm:flex-row gap-4 justify-between items-center text-[#c4a882] text-sm text-center sm:text-left">
 				<div>
 					<span className="font-bold text-[#f5dfc0] text-lg block">
 						The Daily Grind
 					</span>
 					<span className="text-xs text-[#c4a882]/60">Specialty Coffee</span>
 				</div>
-				<nav className="flex gap-6 text-[#c4a882]/70 text-xs uppercase tracking-wider">
+				<nav className="flex flex-wrap justify-center gap-4 sm:gap-6 text-[#c4a882]/70 text-xs uppercase tracking-wider">
 					<a href="#" className="hover:text-white transition-colors">
 						Menu
 					</a>

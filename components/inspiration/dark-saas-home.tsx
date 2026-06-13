@@ -85,12 +85,12 @@ export function DarkSaasHome() {
 			style={{ fontFamily: "'Inter', 'system-ui', sans-serif" }}
 		>
 			<header className="sticky top-0 z-20 border-b border-[#1f1f2e] bg-[#0a0a0f]/95 backdrop-blur">
-				<div className="flex items-center justify-between px-12 py-5">
+				<div className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-5">
 					<a href="#" className="flex items-center gap-2 text-lg font-bold text-white">
 						<span className="text-[#818cf8]">◈</span>
 						<span>Axiom</span>
 					</a>
-					<nav className="flex items-center gap-8 text-sm text-slate-400">
+					<nav className="hidden md:flex items-center gap-8 text-sm text-slate-400">
 						<a href="#" className="hover:text-white transition-colors">
 							Docs
 						</a>
@@ -121,7 +121,7 @@ export function DarkSaasHome() {
 				</div>
 			</header>
 
-			<section className="relative overflow-hidden px-12 py-28 text-center">
+			<section className="relative overflow-hidden px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-28 text-center">
 				<Image
 					src="/christopher-gower-m_HRfLhgABo-unsplash.jpg"
 					alt="Developer workspace with code on MacBook"
@@ -135,12 +135,12 @@ export function DarkSaasHome() {
 					<span className="inline-flex rounded-full border border-[#6366f1]/40 bg-[#6366f1]/10 px-3 py-1 text-xs text-[#818cf8]">
 						◈ Now in public beta
 					</span>
-					<h1 className="mt-8 text-6xl font-black leading-tight tracking-tight text-white">
+					<h1 className="mt-8 text-3xl sm:text-4xl md:text-6xl font-black leading-tight tracking-tight text-white">
 						Observability for
 						<br />
 						teams that ship fast
 					</h1>
-					<p className="mx-auto mt-4 max-w-lg text-lg text-slate-400">
+					<p className="mx-auto mt-4 max-w-lg text-base sm:text-lg text-slate-400">
 						Ship with confidence. Real-time logs, traces and metrics — unified in
 						one place.
 					</p>
@@ -185,11 +185,11 @@ export function DarkSaasHome() {
 				</div>
 			</section>
 
-			<section className="border-y border-[#1f1f2e] px-12 py-10">
+			<section className="border-y border-[#1f1f2e] px-4 sm:px-6 md:px-12 py-10">
 				<p className="mb-6 text-center text-xs uppercase tracking-widest text-slate-500">
 					Trusted by engineering teams at
 				</p>
-				<div className="flex items-center justify-center gap-4 text-sm font-bold tracking-wide text-slate-600">
+				<div className="flex flex-wrap items-center justify-center gap-4 text-sm font-bold tracking-wide text-slate-600">
 					<span>Stripe</span>
 					<span>·</span>
 					<span>Linear</span>
@@ -204,7 +204,7 @@ export function DarkSaasHome() {
 				</div>
 			</section>
 
-			<section className="px-12 py-20">
+			<section className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
 				<div className="mx-auto max-w-6xl">
 					<h2 className="mb-3 text-center text-3xl font-bold text-white">
 						Everything you need
@@ -212,7 +212,7 @@ export function DarkSaasHome() {
 					<p className="mb-12 text-center text-slate-400">
 						From first deploy to peak scale, Axiom keeps your stack visible.
 					</p>
-					<div className="grid grid-cols-3 gap-4">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
 						{features.map((feature) => (
 							<div
 								key={feature.title}
@@ -233,8 +233,8 @@ export function DarkSaasHome() {
 				</div>
 			</section>
 
-			<section className="border-y border-[#1f1f2e] bg-[#13131a] px-12 py-12">
-				<div className="mx-auto grid max-w-6xl grid-cols-4 gap-6">
+			<section className="border-y border-[#1f1f2e] bg-[#13131a] px-4 sm:px-6 md:px-12 py-12">
+				<div className="mx-auto grid max-w-6xl grid-cols-2 sm:grid-cols-4 gap-6">
 					{stats.map((stat) => (
 						<div key={stat.label} className="text-center">
 							<p className="text-3xl font-black text-white">{stat.value}</p>
@@ -244,9 +244,9 @@ export function DarkSaasHome() {
 				</div>
 			</section>
 
-			<section className="px-12 py-20 text-center">
+			<section className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-center">
 				<h2 className="text-3xl font-bold text-white">Simple, predictable pricing</h2>
-				<div className="mx-auto mt-12 grid max-w-4xl grid-cols-3 gap-6">
+				<div className="mx-auto mt-12 grid max-w-4xl grid-cols-1 sm:grid-cols-3 gap-6">
 					{pricing.map((plan) => (
 						<div
 							key={plan.name}
@@ -278,8 +278,8 @@ export function DarkSaasHome() {
 				</div>
 			</section>
 
-			<section className="bg-[#6366f1] px-12 py-20 text-center">
-				<h2 className="text-4xl font-black text-white">
+			<section className="bg-[#6366f1] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-center">
+				<h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white">
 					Start shipping with confidence
 				</h2>
 				<p className="mx-auto mt-4 max-w-xl text-white/70">
@@ -294,8 +294,8 @@ export function DarkSaasHome() {
 				</a>
 			</section>
 
-			<footer className="border-t border-[#1f1f2e] bg-[#13131a] px-12 py-10">
-				<div className="grid grid-cols-[1.1fr_1fr_1.1fr] gap-10 border-b border-[#1f1f2e] pb-8">
+			<footer className="border-t border-[#1f1f2e] bg-[#13131a] px-4 sm:px-6 md:px-12 py-10">
+				<div className="grid grid-cols-1 md:grid-cols-[1.1fr_1fr_1.1fr] gap-8 md:gap-10 border-b border-[#1f1f2e] pb-8">
 					<div>
 						<a href="#" className="flex items-center gap-2 text-lg font-bold text-white">
 							<span className="text-[#818cf8]">◈</span>
@@ -351,9 +351,9 @@ export function DarkSaasHome() {
 						</div>
 					</div>
 				</div>
-				<div className="flex items-center justify-between pt-6 text-sm text-slate-500">
+				<div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between pt-6 text-sm text-slate-500 text-center sm:text-left">
 					<p>© 2025 Axiom, Inc.</p>
-					<div className="flex gap-5">
+					<div className="flex justify-center gap-5 sm:justify-start">
 						<a href="#" className="hover:text-white transition-colors">
 							GitHub
 						</a>

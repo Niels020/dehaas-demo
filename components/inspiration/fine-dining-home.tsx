@@ -36,8 +36,8 @@ export function FineDiningHome() {
 			style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
 		>
 			{/* Navigation */}
-			<header className="flex items-center justify-between border-b border-[#2e2820] px-12 py-6">
-				<nav className="flex gap-8 text-xs uppercase tracking-[0.25em] text-[#9a8f7d]">
+			<header className="flex items-center justify-between border-b border-[#2e2820] px-4 sm:px-6 md:px-12 py-4 md:py-6">
+				<nav className="hidden md:flex gap-8 text-xs uppercase tracking-[0.25em] text-[#9a8f7d]">
 					<a href="#" className="hover:text-[#e9e2d6] transition-colors">
 						Menu
 					</a>
@@ -52,7 +52,7 @@ export function FineDiningHome() {
 					</span>
 				</a>
 				<nav className="flex items-center gap-8 text-xs uppercase tracking-[0.25em] text-[#9a8f7d]">
-					<a href="#" className="hover:text-[#e9e2d6] transition-colors">
+					<a href="#" className="hidden md:inline hover:text-[#e9e2d6] transition-colors">
 						Private Dining
 					</a>
 					<a
@@ -65,7 +65,7 @@ export function FineDiningHome() {
 			</header>
 
 			{/* Hero */}
-			<section className="relative flex min-h-[620px] items-center justify-center overflow-hidden text-center">
+			<section className="relative flex min-h-[460px] sm:min-h-[540px] md:min-h-[620px] items-center justify-center overflow-hidden text-center">
 				<Image
 					src="/restaurant-interior-unsplash.jpg"
 					alt="Candlelit restaurant table with plated dish and wine glasses"
@@ -75,11 +75,11 @@ export function FineDiningHome() {
 					className="object-cover object-center"
 				/>
 				<div className="absolute inset-0 bg-[#171410]/70" />
-				<div className="relative z-10 max-w-2xl px-8">
+				<div className="relative z-10 max-w-2xl px-4 sm:px-6 md:px-8">
 					<p className="mb-6 text-xs uppercase tracking-[0.5em] text-[#b08d4f]">
 						One Michelin Star — Est. 2016
 					</p>
-					<h1 className="text-6xl font-light leading-tight">
+					<h1 className="text-3xl sm:text-4xl md:text-6xl font-light leading-tight">
 						Fire, season,
 						<br />
 						<em>patience</em>
@@ -99,12 +99,12 @@ export function FineDiningHome() {
 			</section>
 
 			{/* Tasting menu */}
-			<section className="px-12 py-24">
+			<section className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24">
 				<div className="mx-auto max-w-2xl text-center">
 					<p className="mb-3 text-xs uppercase tracking-[0.5em] text-[#b08d4f]">
 						This season
 					</p>
-					<h2 className="text-4xl font-light">The Tasting Menu</h2>
+					<h2 className="text-2xl sm:text-3xl md:text-4xl font-light">The Tasting Menu</h2>
 					<p className="mt-4 text-sm italic text-[#9a8f7d]">
 						Five courses · €115 — wine pairing €68
 					</p>
@@ -131,21 +131,21 @@ export function FineDiningHome() {
 			</section>
 
 			{/* Chef */}
-			<section className="grid grid-cols-2 items-stretch bg-[#1f1b15]">
-				<div className="relative min-h-[480px] overflow-hidden">
+			<section className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#1f1b15]">
+				<div className="relative min-h-[320px] md:min-h-[480px] overflow-hidden">
 					<Image
 						src="/chef-knife-unsplash.jpg"
 						alt="Chef finely chopping herbs on a cutting board"
 						fill
-						sizes="50vw"
+						sizes="(max-width: 768px) 100vw, 50vw"
 						className="object-cover object-center"
 					/>
 				</div>
-				<div className="flex flex-col justify-center px-16 py-16">
+				<div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-10 md:py-16">
 					<p className="mb-6 text-xs uppercase tracking-[0.5em] text-[#b08d4f]">
 						The kitchen
 					</p>
-					<h2 className="mb-8 text-4xl font-light leading-snug">
+					<h2 className="mb-8 text-2xl sm:text-3xl md:text-4xl font-light leading-snug">
 						Cooked over oak,
 						<br />
 						plated by hand
@@ -169,10 +169,10 @@ export function FineDiningHome() {
 			</section>
 
 			{/* Signature dish + bar */}
-			<section className="grid grid-cols-2 items-stretch">
-				<div className="flex flex-col justify-center px-16 py-20">
+			<section className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+				<div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-10 sm:py-12 md:py-20">
 					<Sparkles className="mb-6 h-6 w-6 text-[#b08d4f]" />
-					<h2 className="mb-6 text-3xl font-light leading-snug">
+					<h2 className="mb-6 text-2xl sm:text-3xl font-light leading-snug">
 						The dish people
 						<br />
 						cross town for
@@ -183,29 +183,29 @@ export function FineDiningHome() {
 						only thing we&apos;ve never dared to change.
 					</p>
 				</div>
-				<div className="relative min-h-[420px] overflow-hidden">
+				<div className="relative min-h-[300px] md:min-h-[420px] overflow-hidden">
 					<Image
 						src="/plated-dish-unsplash.jpg"
 						alt="Roasted salmon plated with greens and a dark reduction, red wine behind"
 						fill
-						sizes="50vw"
+						sizes="(max-width: 768px) 100vw, 50vw"
 						className="object-cover object-center"
 					/>
 				</div>
 			</section>
-			<section className="grid grid-cols-2 items-stretch bg-[#1f1b15]">
-				<div className="relative min-h-[420px] overflow-hidden">
+			<section className="grid grid-cols-1 md:grid-cols-2 items-stretch bg-[#1f1b15]">
+				<div className="relative min-h-[300px] md:min-h-[420px] overflow-hidden">
 					<Image
 						src="/bar-interior-unsplash.jpg"
 						alt="Warmly lit bar with chalkboard menus and rows of bottles"
 						fill
-						sizes="50vw"
+						sizes="(max-width: 768px) 100vw, 50vw"
 						className="object-cover object-center"
 					/>
 				</div>
-				<div className="flex flex-col justify-center px-16 py-20">
+				<div className="flex flex-col justify-center px-6 sm:px-10 md:px-16 py-10 sm:py-12 md:py-20">
 					<Wine className="mb-6 h-6 w-6 text-[#b08d4f]" />
-					<h2 className="mb-6 text-3xl font-light leading-snug">
+					<h2 className="mb-6 text-2xl sm:text-3xl font-light leading-snug">
 						The cellar bar
 					</h2>
 					<p className="mb-4 max-w-md text-sm leading-relaxed text-[#9a8f7d]">
@@ -219,13 +219,13 @@ export function FineDiningHome() {
 			</section>
 
 			{/* Reservation strip */}
-			<section className="border-y border-[#2e2820] px-12 py-20 text-center">
-				<h2 className="text-4xl font-light">An evening at Ember</h2>
+			<section className="border-y border-[#2e2820] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-center">
+				<h2 className="text-2xl sm:text-3xl md:text-4xl font-light">An evening at Ember</h2>
 				<p className="mx-auto mt-4 max-w-md text-sm italic leading-relaxed text-[#9a8f7d]">
 					Two seatings nightly, Wednesday through Sunday. Tables release on the
 					first of each month.
 				</p>
-				<div className="mt-10 flex items-center justify-center gap-12 text-sm text-[#9a8f7d]">
+				<div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-12 sm:gap-y-4 text-sm text-[#9a8f7d]">
 					<span className="flex items-center gap-2">
 						<Clock className="h-4 w-4 text-[#b08d4f]" />
 						18:00 &amp; 20:45
@@ -248,9 +248,9 @@ export function FineDiningHome() {
 			</section>
 
 			{/* Footer */}
-			<footer className="flex items-center justify-between px-12 py-8 text-xs uppercase tracking-[0.25em] text-[#9a8f7d]">
+			<footer className="flex flex-col sm:flex-row items-center justify-between gap-4 px-4 sm:px-6 md:px-12 py-8 text-xs uppercase tracking-[0.25em] text-[#9a8f7d] text-center">
 				<span className="tracking-[0.3em] text-[#e9e2d6]">EMBER</span>
-				<nav className="flex gap-8">
+				<nav className="flex flex-wrap justify-center gap-4 sm:gap-8">
 					<a href="#" className="hover:text-[#e9e2d6] transition-colors">
 						Gift Cards
 					</a>

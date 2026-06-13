@@ -62,13 +62,13 @@ export function WellnessStudioHome() {
 			className="min-h-screen bg-[#f7f5f1] text-[#2d3a2d]"
 			style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
 		>
-			<header className="border-b border-[#e0dbd3] bg-[#f7f5f1] px-12 py-6">
+			<header className="border-b border-[#e0dbd3] bg-[#f7f5f1] px-4 sm:px-6 md:px-12 py-6">
 				<div className="flex items-center justify-between gap-8">
 					<a href="#" className="flex items-center gap-3 text-[#2d3a2d] transition-colors">
 						<span className="text-[#5c7a5c]">✦</span>
 						<span className="text-xl font-light tracking-[0.2em]">Serenova</span>
 					</a>
-					<nav className="flex gap-8 text-sm tracking-wider text-[#6b7a6b]">
+					<nav className="hidden md:flex gap-8 text-sm tracking-wider text-[#6b7a6b]">
 						<a href="#" className="hover:text-[#2d3a2d] transition-colors">
 							Classes
 						</a>
@@ -91,7 +91,7 @@ export function WellnessStudioHome() {
 				</div>
 			</header>
 
-			<section className="relative flex min-h-[600px] items-center justify-center overflow-hidden px-8 text-center">
+			<section className="relative flex min-h-[450px] sm:min-h-[600px] items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8 text-center">
 				<Image
 					src="/kike-vega-F2qh3yjz6Jk-unsplash.jpg"
 					alt="Silhouette of woman doing yoga at sunrise"
@@ -105,7 +105,7 @@ export function WellnessStudioHome() {
 					<p className="mb-6 text-xs uppercase tracking-[0.5em] text-[#b5c4a8]">
 						Find your stillness
 					</p>
-					<h1 className="mb-6 text-5xl font-light leading-snug text-white">
+					<h1 className="mb-6 text-3xl sm:text-4xl md:text-5xl font-light leading-snug text-white">
 						Yoga for every
 						<br />
 						body, every day
@@ -125,9 +125,9 @@ export function WellnessStudioHome() {
 				</div>
 			</section>
 
-			<section className="bg-[#f7f5f1] px-12 py-16">
+			<section className="bg-[#f7f5f1] px-4 sm:px-6 md:px-12 py-12 sm:py-16">
 				<h2 className="mb-12 text-center text-3xl font-light text-[#2d3a2d]">Our practices</h2>
-				<div className="grid grid-cols-4 gap-6">
+				<div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
 					{practices.map((practice) => (
 						<div key={practice.title} className="bg-[#edeae3] p-8 text-center">
 							<div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#5c7a5c]/15">
@@ -147,10 +147,10 @@ export function WellnessStudioHome() {
 				</div>
 			</section>
 
-			<section className="grid grid-cols-2 items-center gap-16 bg-white px-12 py-24">
+			<section className="grid grid-cols-1 md:grid-cols-2 items-center gap-8 md:gap-16 bg-white px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24">
 				<div>
 					<p className="mb-6 text-xs uppercase tracking-[0.4em] text-[#c8a96e]">Our philosophy</p>
-					<h2 className="mb-6 text-4xl font-light leading-snug text-[#2d3a2d]">
+					<h2 className="mb-6 text-3xl md:text-4xl font-light leading-snug text-[#2d3a2d]">
 						Movement as medicine
 					</h2>
 					<p className="mb-4 max-w-lg text-sm leading-relaxed text-[#6b7a6b]">
@@ -179,12 +179,12 @@ export function WellnessStudioHome() {
 				</div>
 			</section>
 
-			<section className="bg-[#edeae3] px-12 py-20 text-center">
+			<section className="bg-[#edeae3] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-center">
 				<h2 className="mb-4 text-3xl font-light text-[#2d3a2d]">Meet your guides</h2>
 				<p className="text-sm text-[#6b7a6b]">
 					Experienced teachers offering thoughtful movement, meditation, and care.
 				</p>
-				<div className="mx-auto mt-12 grid max-w-3xl grid-cols-3 gap-8">
+				<div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 sm:grid-cols-3 gap-8">
 					{teachers.map((teacher) => (
 						<div key={teacher.name} className="bg-[#f7f5f1] p-6 text-center">
 							<div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#b5c4a8] text-2xl text-white">
@@ -200,8 +200,8 @@ export function WellnessStudioHome() {
 				</div>
 			</section>
 
-			<section className="bg-[#5c7a5c] px-12 py-24 text-center">
-				<h2 className="mb-4 text-4xl font-light text-white">Join our next retreat</h2>
+			<section className="bg-[#5c7a5c] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-24 text-center">
+				<h2 className="mb-4 text-3xl sm:text-4xl font-light text-white">Join our next retreat</h2>
 				<p className="text-white/70">Five days in the mountains. Disconnect to reconnect.</p>
 				<p className="mt-2 mb-8 text-sm tracking-wider text-[#b5c4a8]">
 					Blue Ridge Highlands · October 14–18
@@ -214,7 +214,7 @@ export function WellnessStudioHome() {
 				</a>
 			</section>
 
-			<section className="bg-white px-12 py-16 text-center">
+			<section className="bg-white px-4 sm:px-6 md:px-12 py-12 sm:py-16 text-center">
 				<div className="text-6xl leading-none text-[#b5c4a8]">&ldquo;</div>
 				<blockquote className="mx-auto max-w-xl text-xl font-light italic leading-relaxed text-[#2d3a2d]">
 					Serenova feels like an exhale. Every class leaves me steadier, softer, and more at home in my body.
@@ -222,13 +222,13 @@ export function WellnessStudioHome() {
 				<p className="mt-6 text-sm uppercase tracking-widest text-[#6b7a6b]">Elena R. · Member since 2021</p>
 			</section>
 
-			<section className="bg-[#f7f5f1] px-12 py-16">
+			<section className="bg-[#f7f5f1] px-4 sm:px-6 md:px-12 py-12 sm:py-16">
 				<div className="mx-auto max-w-2xl text-center">
 					<h3 className="mb-4 text-3xl font-light text-[#2d3a2d]">A slower inbox</h3>
 					<p className="mb-8 text-sm leading-relaxed text-[#6b7a6b]">
 						Receive practice notes, retreat announcements, and seasonal journal reflections.
 					</p>
-					<div className="flex items-center justify-center gap-3">
+					<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
 						<input
 							type="email"
 							placeholder="Email address"
@@ -236,7 +236,7 @@ export function WellnessStudioHome() {
 						/>
 						<button
 							type="button"
-							className="bg-[#5c7a5c] px-6 py-3 text-xs uppercase tracking-widest text-white transition-colors hover:bg-[#4a6649]"
+							className="w-full sm:w-auto bg-[#5c7a5c] px-6 py-3 text-xs uppercase tracking-widest text-white transition-colors hover:bg-[#4a6649]"
 						>
 							Subscribe
 						</button>
@@ -244,8 +244,8 @@ export function WellnessStudioHome() {
 				</div>
 			</section>
 
-			<footer className="bg-[#2d3a2d] px-12 py-10">
-				<div className="grid grid-cols-[1.2fr_1fr_1fr] gap-10">
+			<footer className="bg-[#2d3a2d] px-4 sm:px-6 md:px-12 py-10">
+				<div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] gap-8 md:gap-10">
 					<div>
 						<a href="#" className="text-lg font-light tracking-[0.2em] text-[#b5c4a8]">
 							✦ Serenova

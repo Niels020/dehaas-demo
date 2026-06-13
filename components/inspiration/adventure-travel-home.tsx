@@ -71,12 +71,12 @@ export function AdventureTravelHome() {
 			style={{ fontFamily: "'Helvetica Neue', 'Arial', sans-serif" }}
 		>
 			{/* Navigation */}
-			<header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-12 py-6">
+			<header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 sm:py-6">
 				<a href="#" className="flex items-center gap-2 text-lg font-bold tracking-tight text-white">
 					<Mountain className="h-5 w-5 text-[#e8b04b]" />
 					Wildpath
 				</a>
-				<nav className="flex gap-8 text-sm font-medium text-white/80">
+				<nav className="hidden md:flex gap-8 text-sm font-medium text-white/80">
 					<a href="#" className="hover:text-white transition-colors">
 						Expeditions
 					</a>
@@ -99,7 +99,7 @@ export function AdventureTravelHome() {
 			</header>
 
 			{/* Hero */}
-			<section className="relative flex min-h-[640px] items-end overflow-hidden">
+			<section className="relative flex min-h-[480px] sm:min-h-[560px] md:min-h-[640px] items-end overflow-hidden">
 				<Image
 					src="/mountain-peak-hero-unsplash.jpg"
 					alt="Snow-capped peaks rising above a sea of clouds at sunrise"
@@ -109,17 +109,17 @@ export function AdventureTravelHome() {
 					className="object-cover object-center"
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-[#101813]/90 via-[#101813]/30 to-[#101813]/20" />
-				<div className="relative z-10 w-full px-12 pb-16">
+				<div className="relative z-10 w-full px-4 sm:px-6 md:px-12 pb-10 sm:pb-16">
 					<p className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#e8b04b]">
 						<Compass className="h-4 w-4" />
 						Est. 2014 — 40+ routes worldwide
 					</p>
-					<h1 className="max-w-3xl text-6xl font-bold leading-[1.05] tracking-tight text-white">
+					<h1 className="max-w-3xl text-3xl sm:text-4xl md:text-6xl font-bold leading-[1.05] tracking-tight text-white">
 						Go where the
 						<br />
 						road gives up
 					</h1>
-					<div className="mt-8 flex items-end justify-between gap-8">
+					<div className="mt-8 flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
 						<p className="max-w-md text-base leading-relaxed text-white/75">
 							Small-group expeditions to the quiet corners of the world — guided
 							by locals, carried by your own two feet.
@@ -136,7 +136,7 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* Stats strip */}
-			<section className="grid grid-cols-4 border-b border-[#e5e1d8] bg-white px-12 py-8 text-center">
+			<section className="grid grid-cols-2 sm:grid-cols-4 gap-6 border-b border-[#e5e1d8] bg-white px-4 sm:px-6 md:px-12 py-8 text-center">
 				{[
 					{ value: "4 800+", label: "Travellers guided" },
 					{ value: "23", label: "Countries" },
@@ -153,13 +153,13 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* Expeditions */}
-			<section className="px-12 py-20">
-				<div className="mb-10 flex items-end justify-between">
+			<section className="px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20">
+				<div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
 					<div>
 						<p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[#5c7a5c]">
 							Departing soon
 						</p>
-						<h2 className="text-4xl font-bold tracking-tight">This season&apos;s expeditions</h2>
+						<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">This season&apos;s expeditions</h2>
 					</div>
 					<a
 						href="#"
@@ -169,7 +169,7 @@ export function AdventureTravelHome() {
 						<ArrowRight className="h-4 w-4" />
 					</a>
 				</div>
-				<div className="grid grid-cols-3 gap-6">
+				<div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 					{expeditions.map((trip) => (
 						<div
 							key={trip.title}
@@ -180,7 +180,7 @@ export function AdventureTravelHome() {
 									src={trip.image}
 									alt={trip.alt}
 									fill
-									sizes="33vw"
+									sizes="(max-width: 640px) 100vw, 33vw"
 									className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
 								/>
 								<span className="absolute left-4 top-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#1f2a24] backdrop-blur-sm">
@@ -207,18 +207,18 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* Promises */}
-			<section className="bg-[#1f2a24] px-12 py-20 text-white">
+			<section className="bg-[#1f2a24] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-white">
 				<div className="mb-12 max-w-xl">
 					<p className="mb-2 text-xs font-bold uppercase tracking-[0.3em] text-[#e8b04b]">
 						The Wildpath way
 					</p>
-					<h2 className="text-4xl font-bold leading-tight tracking-tight">
+					<h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight tracking-tight">
 						Adventure, without
 						<br />
 						the guesswork
 					</h2>
 				</div>
-				<div className="grid grid-cols-4 gap-8">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
 					{promises.map(({ Icon, title, description }) => (
 						<div key={title}>
 							<div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-[#e8b04b]/15">
@@ -232,7 +232,7 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* Testimonial */}
-			<section className="bg-[#fbfaf7] px-12 py-20 text-center">
+			<section className="bg-[#fbfaf7] px-4 sm:px-6 md:px-12 py-12 sm:py-16 md:py-20 text-center">
 				<div className="mx-auto mb-4 flex items-center justify-center gap-1 text-[#e8b04b]">
 					{Array.from({ length: 5 }).map((_, i) => (
 						<Star key={i} className="h-5 w-5 fill-current" />
@@ -249,10 +249,10 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* CTA */}
-			<section className="px-12 pb-20">
-				<div className="flex items-center justify-between rounded-3xl bg-[#5c7a5c] px-14 py-14">
+			<section className="px-4 sm:px-6 md:px-12 pb-12 sm:pb-16 md:pb-20">
+				<div className="flex flex-col items-start gap-6 rounded-3xl bg-[#5c7a5c] px-6 sm:px-10 md:px-14 py-10 md:py-14 sm:flex-row sm:items-center sm:justify-between">
 					<div>
-						<h2 className="text-3xl font-bold tracking-tight text-white">
+						<h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
 							Not sure which trail is yours?
 						</h2>
 						<p className="mt-2 max-w-md text-white/75">
@@ -271,13 +271,13 @@ export function AdventureTravelHome() {
 			</section>
 
 			{/* Footer */}
-			<footer className="border-t border-[#e5e1d8] bg-white px-12 py-10">
-				<div className="flex items-center justify-between">
+			<footer className="border-t border-[#e5e1d8] bg-white px-4 sm:px-6 md:px-12 py-10">
+				<div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row">
 					<a href="#" className="flex items-center gap-2 text-base font-bold tracking-tight">
 						<Mountain className="h-5 w-5 text-[#e8b04b]" />
 						Wildpath
 					</a>
-					<nav className="flex gap-8 text-sm text-[#8a9088]">
+					<nav className="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm text-[#8a9088]">
 						<a href="#" className="hover:text-[#1f2a24] transition-colors">
 							Expeditions
 						</a>
